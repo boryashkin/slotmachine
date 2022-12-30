@@ -55,147 +55,34 @@ var SlotValues = []SlotValue{
 	Slot9,
 }
 
-var SlotSetPayout = map[SlotSet]Payout{
+var DefaultSlotSetPayout = map[SlotSet]Payout{
 	SlotSet{Slot0, Slot0, Slot0}: {Sum: 1, Text: "Beautiful, but all zeros. Keep it up!"},
 	SlotSet{Slot1, Slot1, Slot1}: {Sum: 11, Text: "Win! But try bigger"},
 	SlotSet{Slot2, Slot2, Slot2}: {Sum: 12, Text: "Not bad! Winner!"},
-	SlotSet{Slot3, Slot3, Slot3}: {Sum: 100, Text: "Nice bet!"},
+	SlotSet{Slot3, Slot3, Slot3}: {Sum: 200, Text: "Nice bet!"},
 	SlotSet{Slot4, Slot4, Slot4}: {Sum: 14, Text: "Good result!"},
 	SlotSet{Slot5, Slot5, Slot5}: {Sum: 15, Text: "Beautiful!"},
 	SlotSet{Slot6, Slot6, Slot6}: {Sum: 16, Text: "Great result!"},
-	SlotSet{Slot7, Slot7, Slot7}: {Sum: 300, Text: "Jackpot!!!"},
+	SlotSet{Slot7, Slot7, Slot7}: {Sum: 600, Text: "Jackpot!!!"},
 	SlotSet{Slot8, Slot8, Slot8}: {Sum: 18, Text: "Look at you, winner!"},
 	SlotSet{Slot9, Slot9, Slot9}: {Sum: 19, Text: "Biggest win aside of Jackpot!"},
-
-	SlotSet{Slot0, Slot1, Slot2}: {Sum: 2, Text: "Nice!"},
-	SlotSet{Slot1, Slot2, Slot3}: {Sum: 2, Text: "Nice!"},
-	SlotSet{Slot3, Slot2, Slot1}: {Sum: 2, Text: "Nice!"},
-	SlotSet{Slot3, Slot4, Slot5}: {Sum: 2, Text: "Nice!"},
-	SlotSet{Slot5, Slot4, Slot3}: {Sum: 2, Text: "Good!"},
-	SlotSet{Slot6, Slot7, Slot8}: {Sum: 2, Text: "Beautiful!"},
-	SlotSet{Slot8, Slot7, Slot6}: {Sum: 2, Text: "Good!"},
-	SlotSet{Slot7, Slot8, Slot9}: {Sum: 2, Text: "Nice!"},
-	SlotSet{Slot9, Slot8, Slot7}: {Sum: 2, Text: "Not bad!"},
-
-	SlotSet{Slot0, Slot0, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot0, Slot0, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot1, Slot1, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot1, Slot1, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot2, Slot2, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot2, Slot2, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot3, Slot3, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot3, Slot3, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot4, Slot4, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot4, Slot4, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot5, Slot5, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot5, Slot5, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot6, Slot6, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot6, Slot6, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot7, Slot7, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot8}: {Sum: 8, Text: "Double!"},
-	SlotSet{Slot7, Slot7, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot8, Slot8, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot8, Slot8, Slot9}: {Sum: 9, Text: "Double!"},
-
-	SlotSet{Slot9, Slot9, Slot1}: {Sum: 1, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot2}: {Sum: 2, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot3}: {Sum: 3, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot4}: {Sum: 4, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot5}: {Sum: 5, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot6}: {Sum: 6, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot7}: {Sum: 7, Text: "Double!"},
-	SlotSet{Slot9, Slot9, Slot8}: {Sum: 8, Text: "Double!"},
 }
 
 type SlotMachine struct {
-	betSize         int64
-	stats           *Stats
-	winDistribution map[SlotSet]int64
-	max             *big.Int
-	slotValues      [10]SlotValue
+	betSize     int64
+	stats       *Stats
+	max         *big.Int
+	slotValues  []SlotValue
+	payoutTable map[SlotSet]Payout
 }
 
-func NewSlotMachine() SlotMachine {
-	sv := [10]SlotValue{
-		Slot0,
-		Slot1,
-		Slot2,
-		Slot3,
-		Slot4,
-		Slot5,
-		Slot6,
-		Slot7,
-		Slot8,
-		Slot9,
-	}
+func NewSlotMachine(betSize int64, slotValues []SlotValue, payoutTable map[SlotSet]Payout) SlotMachine {
 	m := SlotMachine{
-		betSize:         1,
-		stats:           &Stats{},
-		winDistribution: make(map[SlotSet]int64, 100),
-		slotValues:      sv,
-		max:             big.NewInt(int64(len(sv))),
+		betSize:     betSize,
+		stats:       &Stats{},
+		slotValues:  slotValues,
+		max:         big.NewInt(int64(len(slotValues))),
+		payoutTable: payoutTable,
 	}
 
 	return m
@@ -205,15 +92,11 @@ func (m *SlotMachine) GetStats() Stats {
 	return *m.stats
 }
 
-func (m *SlotMachine) GetWinDistribution() map[SlotSet]int64 {
-	return m.winDistribution
-}
-
-func GetPayoutRate() PayoutRate {
+func (m *SlotMachine) GetPayoutRate() PayoutRate {
 	wc := int64(0)
 	s := int64(0)
 	maxSum := int64(0)
-	for _, v := range SlotSetPayout {
+	for _, v := range m.payoutTable {
 		if maxSum < v.Sum {
 			maxSum = v.Sum
 		}
@@ -221,7 +104,7 @@ func GetPayoutRate() PayoutRate {
 		wc += 1
 	}
 	return PayoutRate{
-		TotalCombinations:   int64(math.Pow(float64(len(SlotValues)), float64(SlotSetSize))),
+		TotalCombinations:   int64(math.Pow(float64(len(m.slotValues)), float64(SlotSetSize))),
 		WinningCombinations: wc,
 		SumOfWinningAmounts: s,
 		BiggestWin:          maxSum,
@@ -253,7 +136,7 @@ func (m *SlotMachine) BetResult() (*BetResult, error) {
 	set := SlotSet{SlotValue(firstSlot), SlotValue(secondSlot), SlotValue(thirdSlot)}
 	m.stats.Revenue += m.betSize
 
-	pay := SlotSetPayout[set]
+	pay := m.payoutTable[set]
 
 	return &BetResult{SlotSet: &set, Payout: &pay}, nil
 }
@@ -268,7 +151,6 @@ func (m *SlotMachine) ApplyBetResultToStats(br *BetResult) {
 	if br.SlotSet == nil {
 		return
 	}
-	m.winDistribution[*br.SlotSet] += 1
 }
 
 func (m *SlotMachine) GetBetSize() int64 {

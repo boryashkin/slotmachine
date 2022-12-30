@@ -5,7 +5,7 @@ import (
 )
 
 func TestPayotRate(t *testing.T) {
-	m := NewSlotMachine()
+	m := NewSlotMachine(1, SlotValues, DefaultSlotSetPayout)
 	tries := 1000
 	for i := 0; i < tries; i++ {
 		br, err := m.BetResult()
@@ -22,12 +22,13 @@ func TestPayotRate(t *testing.T) {
 }
 
 func TestWinRate(t *testing.T) {
-	m := NewSlotMachine()
-	s := GetPayoutRate()
+	m := NewSlotMachine(1, SlotValues, DefaultSlotSetPayout)
+	s := m.GetPayoutRate()
 	totalInputs := s.TotalCombinations * m.GetBetSize()
 	totalOutputs := s.SumOfWinningAmounts
 	if totalInputs < totalOutputs {
 		t.Errorf("Total bet sum should not be less than total payout sum, now: %d / %d", totalInputs, totalOutputs)
 		t.FailNow()
 	}
+	t.Logf("Combinations: %d, Winning: %d, Sum of revenue: %d, Sum of payouts: %d", s.TotalCombinations, s.WinningCombinations, totalInputs, s.SumOfWinningAmounts)
 }
